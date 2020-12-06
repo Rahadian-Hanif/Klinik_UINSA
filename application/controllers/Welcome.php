@@ -3,27 +3,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{
 		$this->load->view('pasien/nav_home');
 		$this->load->view('pasien/home');
 		$this->load->view('pasien/footer_home');
 	}
+
+	public function daftar()
+    {  
+    	date_default_timezone_set("Asia/Jakarta");
+    	$nim		= $this->input->post('nim');
+    	$pegawai_id	= null;
+    	$tanggal	= $this->input->post('tanggal');
+    	$antrian	= random_string('alnum',10);
+    	$jam		= date("H:i:s");
+
+    	$this->m_daftar->daftar($nim,$pegawai_id,date("Y/m/d",strtotime($tanggal)),$antrian,$jam);
+    	redirect('Staf_daftar');
+    }
+
 	public function about()
 	{
 		$this->load->view('pasien/nav_home');

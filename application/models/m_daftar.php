@@ -9,5 +9,11 @@
 			);
 	        return $sql;
 		}
+
+		function load_data($tanggal)
+		{
+			$sql=$this->db->query("SELECT * FROM `pengunjung` WHERE tanggal='$tanggal' LIMIT 20");
+	        return $sql;
+		}
 	}
 ?>

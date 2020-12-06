@@ -85,13 +85,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
 
       <!-- Nav Item - daftar -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_daftar/Daftar');?>">
+        <a class="nav-link" href="<?php echo site_url('Staf_daftar');?>">
           <i class="fas fa-fw fa-clipboard"></i>
           <span>Daftar</span></a>
       </li>
       <!-- Nav Item - Kunjungan -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_daftar/Daftar');?>">
+        <a class="nav-link" href="<?php echo site_url('Staf_daftar');?>">
           <i class="fas fa-fw fa-chart-bar"></i>
           <span>Kunjungan</span></a>
       </li>
