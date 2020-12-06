@@ -10,13 +10,8 @@ class C_Dashboard extends CI_Controller {
 
     public function index()
     {
-        $this->load->view('staff/login');
-    }
-
-    public function tes()
-    {
         $this->load->view('staff/navbar');
-        $this->load->view('staff/staff/dashboard');
+        $this->load->view('staff/dashboard');
         $this->load->view('staff/footer');
     }
 }

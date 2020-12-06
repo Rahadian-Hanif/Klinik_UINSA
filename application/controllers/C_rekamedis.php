@@ -5,16 +5,13 @@ class Auth extends CI_Controller {
 function __construct(){
         parent::__construct();
         $this->load->database();
-        $this->load->model('staff');
+        $this->load->model('M_rekamedis');
     }
 
-	//Register
+	
 	public function register(){
-		$nama = $this->input->post('Nama',TRUE);
-        $email = $this->input->post('Email',TRUE);
-        $password = $this->input->post('password',TRUE);
-		$this->grafik_m->register($email,$password,$nama);
-		redirect('Auth/index');
+		
+		redirect('Auth/index',$data);
 	}
 
 }

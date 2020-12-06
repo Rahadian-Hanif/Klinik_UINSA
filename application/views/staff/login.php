@@ -33,20 +33,24 @@
           <div class="card-body p-0">
             <!-- Nested Row within Card Body -->
             <div class="row">
-              <div class="col-lg-6 d-none d-lg-block"> 
-                <img src="<?= base_url('assets'); ?>/img/uin_baru.png" width="500" height="520">
+              <div class="col-lg-6 d-none d-lg-block  mt-5">
+                <img src="<?= base_url('assets'); ?>/img/logo_sikuin.png" width="550" height="200">
               </div>
               <div class="col-lg-6">
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Welcome</h1>
                   </div>
-                  <form class="user">
+                    <span style="color:red;font-weight:bold">
+                      <?php echo $this->session->flashdata('msg');?>
+                        
+                    </span>
+                  <form class="user" action="<?php echo base_url().'staff/auth'; ?>" method="post">
                     <div class="form-group">
-                      <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                      <input name="username" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username" autocomplete="off">
                     </div>
                     <div class="form-group">
-                      <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                      <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
                       <div class="custom-control custom-checkbox small">
@@ -54,18 +58,9 @@
                         <label class="custom-control-label" for="customCheck">Remember Me</label>
                       </div>
                     </div>
-                    <a href="<?php echo site_url('Welcome/tes');?>" class="btn btn-success btn-user btn-block">
-                      Login
-                    </a>
+                    <button class="btn btn-success btn-user btn-block" type="submit">Login</button>
                     <hr>
                   </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
-                  </div>
                 </div>
               </div>
             </div>

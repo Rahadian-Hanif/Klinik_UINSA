@@ -49,11 +49,4 @@ class Welcome extends CI_Controller {
 		$this->load->view('pasien/chat');
 		$this->load->view('pasien/footer_profile');
 	}
-
-	public function tes()
-	{
-		$this->load->view('staff/navbar');
-		$this->load->view('staff/dashboard');
-		$this->load->view('staff/footer');
-	}
 }

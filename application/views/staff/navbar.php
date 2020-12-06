@@ -18,6 +18,19 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+ <!-- Javascript Bootstrap -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js">
+</script>
+ <!-- Javascript Bootstrap Datepicker -->
+ <script 
+src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.js">
+</script>
+
   <script type="text/javascript">
  window.onload = function() { jam(); }
  function jam() {
@@ -57,7 +70,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Welcome/tes');?>">
+        <a class="nav-link" href="<?php echo site_url('C_Dashboard');?>">
           <i class="fas fa-fw fa-home"></i>
           <span>Home</span></a>
       </li>
@@ -119,7 +132,7 @@
             <i class="fa fa-bars"></i>
           </button>
           <!-- Jam-->
-          <h1 style="font-size: 50px; font-family: verdana;" id="jam"></h1>
+          <h1 style="font-size: 25px; font-family: verdana;" id="jam"></h1>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -141,8 +154,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->session->userdata('nama'); ?></span>
+                <i class="fas fa-fw fa-user-circle"></i>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">

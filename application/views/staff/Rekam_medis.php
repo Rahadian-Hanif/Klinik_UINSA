@@ -16,41 +16,35 @@
           <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
+                  <th scope="col">No</th>
+                  <th scope="col">NIM/NIP</th>
+                  <th scope="col">Nama</th>
+                  <th scope="col">Alergi</th>
                   <th scope="col">Action</th>
                 </tr>
               </thead>
               <tbody>
+                <?php
+                        $n=1;
+                        foreach($data->result_array() as $i):
+
+                              $NIM=$i['nim_nip'];
+
+                              $Nama=$i['nama'];
+
+                              $alergi=$i['alergi'];
+
+                  ?>
                 <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <th scope="row"><?php echo $n++;?></th>
+                  <td><?php echo $NIM;?></td>
+                  <td><?php echo $Nama;?></td>
+                  <td><?php echo $alergi;?></td>
                   <td>
-                    <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view');?>" role="button">View</a>
+                    <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view/'.$NIM);?>" role="button">View</a>
                   </td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                  <td>
-                    <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view');?>" role="button">View</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                  <td>
-                    <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view');?>" role="button">View</a>
-                  </td>
-                </tr>
+                <?php endforeach;?>
               </tbody>
           </table>
         </div>

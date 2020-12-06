@@ -14,4 +14,17 @@ class Staf_daftar extends CI_Controller {
         $this->load->view('staff/daftar');
         $this->load->view('staff/footer');
     }
+
+    public function Daftar()
+    {  
+    	$nim		= $this->input->post('nim');
+    	$pegawai_id	= $this->input->post('tanggal');
+    	$tanggal	= date("Y/m/d");
+    	$antrian	= random_string('alnum',10);
+    	$jam		= 
+
+        $this->load->view('staff/navbar');
+        $this->load->view('staff/daftar');
+        $this->load->view('staff/footer');
+    }
 }

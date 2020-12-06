@@ -12,14 +12,17 @@
           <form>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputEmail4">NIM/NIP</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <label for="NIM"><i class="fa fa-user-circle"></i> NIM/NIP</label>
+                <input type="email" class="form-control border border-dark" id="NIM" style="width: 189px;">   
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-6">
-                <label for="inputCity">Tgl</label>
-                <input type="text" class="form-control" id="inputCity">
+                <label for=""><i class="fa fa-calendar-alt icon"></i> Tanggal</label><br>
+                <input type="text" class="datepicker border border-dark" name="tanggal" autocomplete="off">            
+                 <script type="text/javascript">
+                  $('.datepicker').datepicker();
+                 </script>
               </div>
             </div>
             <div class="form-group">
