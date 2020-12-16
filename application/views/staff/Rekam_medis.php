@@ -32,14 +32,14 @@
 
                               $Nama=$i['nama'];
 
-                              $alergi=$i['alergi'];
+                              $riwayat=$i['riwayat'];
 
                   ?>
                 <tr>
                   <th scope="row"><?php echo $n++;?></th>
                   <td><?php echo $NIM;?></td>
                   <td><?php echo $Nama;?></td>
-                  <td><?php echo $alergi;?></td>
+                  <td><?php echo $riwayat;?></td>
                   <td>
                     <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view/'.$NIM);?>" role="button">View</a>
                   </td>

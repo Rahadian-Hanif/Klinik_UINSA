@@ -32,7 +32,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="<?php echo site_url('Welcome/profile');?>">
+            <a class="navbar-brand" href="<?php echo site_url('Profile');?>">
                 <img src="<?= base_url('assets'); ?>/img/logo_sikuin.png" width="180" height="50"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,9 +41,9 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
-                      <li class="nav-item active"><a href="<?php echo site_url('Welcome/profile');?>" class="nav-link"> <span class="icon-person"></span> Profil</a></li>
+                      <li class="nav-item active"><a href="<?php echo site_url('Profile');?>" class="nav-link"> <span class="icon-person"></span> Profil</a></li>
                       <li class="nav-item"><a href="<?php echo site_url('Welcome/konsultasi');?>" class="nav-link"><span class="icon-chat"></span> Konsultasi </a></li>
-                      <li class="nav-item"><a href="" class="nav-link"><span class="ion-ios-log-out"></span> Keluar</a></li>
+                      <li class="nav-item"><a href="<?php echo site_url('Welcome/logout');?>" class="nav-link"><span class="ion-ios-log-out"></span> Keluar</a></li>
                       <li class="nav-item cta"><a href="" class="btn btn-outline-primary ml-1" data-toggle="modal" data-target="#modalRequest"><span>Ambil Nomer Antrian</span></a></li>
                     </ul>
                   </div>

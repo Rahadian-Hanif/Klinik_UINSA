@@ -91,13 +91,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
       </li>
       <!-- Nav Item - Kunjungan -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_daftar');?>">
+        <a class="nav-link" href="<?php echo site_url('Staf_laporan');?>">
           <i class="fas fa-fw fa-chart-bar"></i>
-          <span>Kunjungan</span></a>
+          <span>Laporan</span></a>
       </li>
       <!-- Nav Item - Rekamedis -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_rekam_medis/rekam_medis');?>">
+        <a class="nav-link" href="<?php echo site_url('Staf_rekam_medis');?>">
           <i class="fas fa-fw fa-notes-medical"></i>
           <span>Rekam Medis</span></a>
       </li>

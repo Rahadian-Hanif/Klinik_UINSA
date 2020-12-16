@@ -23,13 +23,21 @@ class Staf_daftar extends CI_Controller {
     public function daftar()
     {  
     	date_default_timezone_set("Asia/Jakarta");
-    	$nim		= $this->input->post('nim');
-    	$pegawai_id	= $this->session->userdata('id');
-    	$tanggal	= $this->input->post('tanggal');
-    	$antrian	= random_string('alnum',10);
-    	$jam		= date("H:i:s");
+    	$nim		= $this->input->post('nim',TRUE);
+        $validate   = $this->m_daftar->validate($nim);
+        if($validate->num_rows() > 0){
+            $pegawai_id  = $this->session->userdata('id');
+            $tanggal = $this->input->post('tanggal');
+            $antrian = random_string('alnum',10);
+            $jam     = date("H:i:s");
 
-    	$this->m_daftar->daftar($nim,$pegawai_id,date("Y/m/d",strtotime($tanggal)),$antrian,$jam);
-    	redirect('Staf_daftar');
+            $this->m_daftar->daftar($nim,$pegawai_id,date("Y/m/d",strtotime($tanggal)),$antrian,$jam);
+            redirect('Staf_daftar');
+            }else{
+                $this->session->set_flashdata('error','NIM/NIP tidak ditemukan');
+                // tidak ditemukan atau kosong
+                redirect('Staf_daftar');             
+             }
+    	
     }
 }

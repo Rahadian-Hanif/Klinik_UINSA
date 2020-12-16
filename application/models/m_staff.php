@@ -8,5 +8,11 @@
 		    $result = $this->db->get('pegawai',1);
 		    return $result;
 		}
+
+		function load_data($tanggal)
+		{
+			$sql=$this->db->query("SELECT COUNT(no_pengunjung) as total FROM `pengunjung` WHERE tanggal='$tanggal'");
+	        return $sql;
+		}
 	}
 ?>

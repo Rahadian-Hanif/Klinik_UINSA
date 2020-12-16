@@ -9,7 +9,7 @@
               
               <div class="row">
                 <div class="col-9">
-                  <a class="btn btn-light" href="<?php echo site_url('Staf_rekam_medis/rekam_medis');?>" role="button">Back</a>
+                  <a class="btn btn-light" href="<?php echo site_url('Staf_rekam_medis');?>" role="button">Back</a>
                 </div>
                 <div class="col">
                   <a class="btn btn-info rounded" href="#tambah" data-toggle="modal" data-target="#tambah">
@@ -50,8 +50,8 @@
                 <div class="card-body">
                   <h5 class="card-title"><?php echo $d->nama;?></h5>
                   <h6 class="card-subtitle mb-2 text-muted">Lahir : <?php echo date('d/m/Y',strtotime($d->tgl_lahir));?></h6>
-                  <p class="card-text">Alergi : <br>
-                  <?php echo $d->alergi;?></p>
+                  <p class="card-text">Riwayat : <br>
+                  <?php echo $d->riwayat;?></p>
                 </div>
                 <?php endforeach;?>
               </div>
@@ -99,7 +99,7 @@
             <form action="<?php echo base_url().'Staf_rekam_medis/tambah'; ?>" method="post">
             <div class="modal-body form-group">
               <div class="form-group">
-                <input type="text" class="datepicker border border-dark" name="tanggal" autocomplete="off">
+                <input type="text" class="datepicker border border-dark" name="tanggal" autocomplete="off" value="<?php echo date("m/d/Y");?>">
                 <i class="fa fa-calendar-alt icon"></i>
                  <script type="text/javascript">
                   $('.datepicker').datepicker();

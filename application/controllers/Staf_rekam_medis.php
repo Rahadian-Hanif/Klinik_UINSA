@@ -10,7 +10,7 @@ class Staf_rekam_medis extends CI_Controller {
 
     }
 
-    public function rekam_medis()
+    public function index()
     {
         $data['data']=$this->m_rekamedis->load_data();
         $this->load->view('staff/navbar');

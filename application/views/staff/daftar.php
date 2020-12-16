@@ -9,6 +9,14 @@
           </div>
 
           <!-- Content Row -->
+          <?php if ($this->session->has_userdata('error')) { ?>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong>Oops!</strong> <?php echo $this->session->flashdata('error');?>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <?php } ?>
           <form action="<?php echo base_url().'Staf_daftar/daftar'; ?>" method="post">
             <div class="form-row">
               <div class="form-group col-md-6">
@@ -19,7 +27,7 @@
             <div class="form-row">
               <div class="form-group col-md-6">
                 <label for=""><i class="fa fa-calendar-alt icon"></i> Tanggal</label><br>
-                <input type="text" class="datepicker border border-dark" name="tanggal" autocomplete="off">            
+                <input type="text" class="datepicker border border-dark" name="tanggal" autocomplete="off" value="<?php echo date("m/d/Y");?>">            
                  <script type="text/javascript">
                   $('.datepicker').datepicker();
                  </script>
@@ -33,7 +41,6 @@
           <table class="table">
               <thead>
                 <tr>
-                  <th scope="col">No</th>
                   <th scope="col">NIM/NIP</th>
                   <th scope="col">No Antrian</th>
                   <th scope="col">Kode</th>
@@ -42,7 +49,6 @@
               </thead>
               <tbody>
                 <?php
-                        $n=1;
                         foreach($data->result_array() as $i):
 
                               $NIM=$i['pasien_nim_nip'];
@@ -55,7 +61,6 @@
 
                   ?>
                 <tr>
-                  <th scope="row"><?php echo $n++;?></th>
                   <td><?php echo $NIM;?></td>
                   <td><?php echo $antrian;?></td>
                   <td><?php echo $kode;?></td>

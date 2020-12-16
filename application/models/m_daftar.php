@@ -12,8 +12,14 @@
 
 		function load_data($tanggal)
 		{
-			$sql=$this->db->query("SELECT * FROM `pengunjung` WHERE tanggal='$tanggal' LIMIT 20");
+			$sql=$this->db->query("SELECT * FROM `pengunjung` WHERE tanggal='$tanggal' ORDER BY no_pengunjung DESC LIMIT 20 ");
 	        return $sql;
+		}
+
+		function validate($nim){
+		    $this->db->where('pasien_nim_nip',$nim);
+		    $result = $this->db->get('pengunjung',1);
+		    return $result;
 		}
 	}
 ?>

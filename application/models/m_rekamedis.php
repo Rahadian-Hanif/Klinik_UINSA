@@ -16,13 +16,13 @@
 
 		function view_bio($nim)
 		{
-			$sql=$this->db->query("SELECT nama, tgl_lahir,alergi FROM `pasien` WHERE nim_nip='$nim'");
+			$sql=$this->db->query("SELECT nama, tgl_lahir,riwayat FROM `pasien` WHERE nim_nip='$nim'");
 	        return $sql;
 		}
 
 		function tambah($nim,$penanganan,$tanggal,$diagnosis)
 		{
-			$sql=$this->db->query("INSERT INTO `rekamedis`(`pasien_nim_nip`, `penanganan`, `tanggal`, `diagnosis`) VALUES ('$nim','$penanganan',DATE_FORMAT('$tanggal', '%Y/%m/%d'),'$diagnosis')");
+			$sql=$this->db->query("INSERT INTO `rekamedis`(`pasien_nim_nip`, `penanganan`, `tanggal`, `diagnosis`) VALUES ('$nim','".$this->db->escape_str($penanganan)."',DATE_FORMAT('$tanggal', '%Y/%m/%d'),'".$this->db->escape_str($diagnosis)."')");
 	        return $sql;
 		}
 

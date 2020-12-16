@@ -10,23 +10,23 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="#" class="appointment-form">
+                    <form action="<?php echo base_url().'Profile/ambil_antrian'; ?>" class="appointment-form" method="post">
                         <div class="row">
                           <div class="col-sm-7">
                             <div class="form-group">
                                 <div class="icon"><span class="icon-user"></span></div>
-                                  <input type="text" class="form-control" id="appointment_name" placeholder="Nim">
+                                  <input type="text" class="form-control" id="appointment_name" placeholder="Nim" name="nim" value="<?php echo $this->session->userdata('nim_nip'); ?>">
                             </div>
                           </div>
                           <div class="col-sm-5">
                             <div class="form-group">
                                 <div class="icon"><span class="ion-ios-calendar"></span></div>
-                              <input type="text" class="form-control appointment_date" placeholder="Date">
+                              <input type="text" class="form-control appointment_date" placeholder="Date" name="tanggal" value="<?php echo date("m/d/Y");?>">
                             </div>    
                           </div>
                         </div>       
                         <div class="form-group">
-                        <a class="btn btn-primary" href="#" role="button">Mengambil Nomer Antrian</a>
+                        <button class="btn btn-primary" type="submit">Mengambil Nomer Antrian</button>
                         </div>
                     </form>
                 </div>
