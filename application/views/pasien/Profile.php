@@ -8,6 +8,18 @@
                     <img src="<?= base_url('assets'); ?>/images/blankprofile.png" style="width: 200px; height: 200px;" alt="">
                 </div>
                 <div class="col-md-8  heading-section ftco-animate ">
+
+                    <?php if ($this->session->has_userdata('berhasil')) { ?>
+                        <div class="alert alert-success" role="alert">
+                          Pendaftaran berhasil klik <a href="<?php echo site_url('Profile/print');?>" class="alert-link" target="_blank">Disinik</a> untuk cetak struk
+                        </div>
+
+                    <?php } else if ($this->session->has_userdata('error')){?>
+                        <div class="alert alert-danger " role="alert">
+                          <?php echo $this->session->flashdata('error');?>
+                        </div>
+                    <?php } ?>
+                    
                     <div class="pricing-entry pb-5 ">
                         <div>
                             <p><span class="price">Profil Saya</span></p>
@@ -33,28 +45,34 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12 heading-section ftco-animate border border-light mt-5">
-                            <h4 class="mb-3 text-primary">Mengambil Nomor Antrian</h4>
+                            <div class="row">
+                                <div class="col-8">
+                                    <h4 class="mb-3 text-primary">Riwayat Kunjungan</h4>
+                                </div>
+                                <div class="col-4">
+                                    <a href="<?php echo site_url('Profile/print');?>" target="_blank"><span class="oi oi-data-transfer-download"></span> Cetak Antrian</a>
+                                </div>  
+                            </div>
+                                     
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th scope="col">Tanggal</th>
-                                        <th scope="col">Antrian</th>
+                                        <th scope="col">Kode Antrian</th>
                                     </tr>
                                 </thead>
-                                <?php foreach($data as $d):?>
-                                <tbody class="text-left">                                    
-                                    <tr>
-                                        <th scope="row"><?php echo date('d F Y', strtotime($d->tanggal));?></th>
-                                        <td><?php echo $d->antrian;?></td>
-                                    </tr>
+                                <?php foreach($data as $d):?> 
+                                <tbody class="text-left">
+
+                                    <td><?php echo $d->tanggal;?></td>
+                                    <td><?php echo $d->antrian;?></td>                                  
                                 </tbody>
                                 <?php endforeach;?>
                             </table>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    

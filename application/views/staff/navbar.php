@@ -103,7 +103,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
       </li>
       <!-- Nav Item - Pesan -->
       <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_rekam_medis/chat');?>">
+        <a class="nav-link" href="<?php echo site_url('staf_chat');?>">
           <i class="fas fa-fw fa-comment-dots"></i>
           <span>Chat</span></a>
       </li>

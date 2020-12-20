@@ -11,37 +11,20 @@
           <!-- Content Row -->
           <table class="table">
             <thead>
-              <tr>
-                <th scope="col">#</th>
                 <th scope="col">First</th>
                 <th scope="col">Last</th>
                 <th scope="col">Handle</th>
               </tr>
             </thead>
             <tbody>
+              <?php foreach($data as $d): ?>
               <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td><a class="btn btn-success rounded-pill" href="<?php echo site_url('Welcome/chat');?>" role="button">Chat</a>
+                <td><?php echo $d->pasien_nip_nim;?></td>
+                <td><?php echo $d->nama;?></td>
+                <td><a class="btn btn-success rounded-pill" href="<?php echo site_url('staf_chat/room_chat');?>" role="button">Chat</a>
                 </td>
               </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>
-                  <a class="btn btn-success rounded-pill" href="<?php echo site_url('Welcome/chat');?>" role="button">Chat</a>
-                </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>
-                  <a class="btn btn-success rounded-pill" href="<?php echo site_url('Welcome/chat');?>" role="button">Chat</a>
-                </td>
-              </tr>
+              <?php endforeach;?>
             </tbody>
           </table>
         </div>

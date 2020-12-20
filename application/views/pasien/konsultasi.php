@@ -11,29 +11,26 @@
                     <th scope="col">Dokter</th>
                   </tr>
                 </thead>
+                <?php
+                        foreach($data->result_array() as $i):
+
+                              $id=$i['id'];
+
+                              $Nama=$i['nama'];
+
+                              $posisi=$i['posisi'];
+
+                  ?>
                 <tbody class="text-left"> 
                   <tr>
-                    <td colspan="2" >Poli Gigi</td>
-                    <td>dr. Otto</td>
+                    <td colspan="2" ><?php echo $posisi;?></td>
+                    <td><?php echo $Nama;?></td>
                     <td>
-                      <a class="btn btn-success" href="<?php echo site_url('Welcome/chat');?>" role="button">Chat</a>
+                      <a class="btn btn-success" href="<?php echo site_url('Chat/room_chat/'.$id);?>" role="button">Chat</a>
                     </td>
                   </tr>         
-                  <tr>
-                    <td colspan="2" >Poli Gigi</td>
-                    <td>dr. Budi</td>
-                    <td>
-                      <a class="btn btn-success" href="Konsultasi.html" role="button">Chat</a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td colspan="2" >Poli Umum</td>
-                    <td>dr. Setyawan</td>
-                    <td>
-                      <a class="btn btn-success" href="Konsultasi.html" role="button">Chat</a>
-                    </td>
-                  </tr>
                 </tbody>
+                <?php endforeach;?>
               </table>
             </div>
           </div>

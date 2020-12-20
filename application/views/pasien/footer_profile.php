@@ -14,14 +14,14 @@
                         <div class="row">
                           <div class="col-sm-7">
                             <div class="form-group">
-                                <div class="icon"><span class="icon-user"></span></div>
-                                  <input type="text" class="form-control" id="appointment_name" placeholder="Nim" name="nim" value="<?php echo $this->session->userdata('nim_nip'); ?>">
+                                <div class="icon"><span class="icon-user"> NIM/NIP</span></div>
+                                  <input type="text" class="form-control" id="appointment_name" placeholder="Nim" name="nim" value="<?php echo $this->session->userdata('nim_nip'); ?>" autocomplete="off">
                             </div>
                           </div>
                           <div class="col-sm-5">
                             <div class="form-group">
-                                <div class="icon"><span class="ion-ios-calendar"></span></div>
-                              <input type="text" class="form-control appointment_date" placeholder="Date" name="tanggal" value="<?php echo date("m/d/Y");?>">
+                                <div class="icon"><span class="ion-ios-calendar"> Tanggal</span></div>
+                              <input type="text" class="form-control appointment_date" placeholder="Date" name="tanggal" value="<?php echo date("m/d/Y");?>" autocomplete="off">
                             </div>    
                           </div>
                         </div>       
@@ -50,6 +50,13 @@
     <script src="<?= base_url('assets'); ?>/js/jquery.timepicker.min.js"></script>
     <script src="<?= base_url('assets'); ?>/js/scrollax.min.js"></script>
     <script src="<?= base_url('assets'); ?>/js/main.js"></script>
+    <script type="text/javascript">
+    var auto_refresh = setInterval(
+    function () {
+       $('#load_content').load('Chat.php').fadeIn("slow");
+    }, 10000); // refresh setiap 10000 milliseconds
+    
+</script>
 
 </body>
 

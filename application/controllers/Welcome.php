@@ -47,25 +47,4 @@ class Welcome extends CI_Controller {
       $this->session->sess_destroy();
       redirect('Welcome');
     }
-
-	// public function about()
-	// {
-	// 	$this->load->view('pasien/nav_home');
-	// 	$this->load->view('pasien/about');
-	// 	$this->load->view('pasien/footer_home');
-	// }
-
-	public function konsultasi()
-	{
-		$this->load->view('pasien/nav_profile');
-		$this->load->view('pasien/konsultasi');
-		$this->load->view('pasien/footer_profile');
-	}
-
-	public function chat()
-	{
-		$this->load->view('pasien/nav_profile');
-		$this->load->view('pasien/chat');
-		$this->load->view('pasien/footer_profile');
-	}
 }

@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <title>DentaCare - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Klinik UINSA</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+     <!-- <meta http-equiv="refresh" content="10" /> -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
 
     <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/open-iconic-bootstrap.min.css">
@@ -42,7 +42,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                     <ul class="navbar-nav ml-auto">
                       <li class="nav-item active"><a href="<?php echo site_url('Profile');?>" class="nav-link"> <span class="icon-person"></span> Profil</a></li>
-                      <li class="nav-item"><a href="<?php echo site_url('Welcome/konsultasi');?>" class="nav-link"><span class="icon-chat"></span> Konsultasi </a></li>
+                      <li class="nav-item"><a href="<?php echo site_url('Chat');?>" class="nav-link"><span class="icon-chat"></span> Konsultasi </a></li>
                       <li class="nav-item"><a href="<?php echo site_url('Welcome/logout');?>" class="nav-link"><span class="ion-ios-log-out"></span> Keluar</a></li>
                       <li class="nav-item cta"><a href="" class="btn btn-outline-primary ml-1" data-toggle="modal" data-target="#modalRequest"><span>Ambil Nomer Antrian</span></a></li>
                     </ul>

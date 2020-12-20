@@ -9,15 +9,9 @@
 		    return $result;
 		}
 
-		function load_data($tanggal)
-		{
-			$sql=$this->db->query("SELECT COUNT(no_pengunjung) as total FROM `pengunjung` WHERE tanggal='$tanggal'");
-	        return $sql;
-		}
-
 		function riwayat_antrian($nim)
 		{
-			$sql=$this->db->query("SELECT `antrian`, `tanggal` FROM `pengunjung` WHERE pasien_nim_nip='$nim' ORDER BY tanggal DESC LIMIT 5");
+			$sql=$this->db->query("SELECT antrian,DATE_FORMAT(tanggal, '%d %M %Y') as tanggal FROM `pengunjung` WHERE pasien_nim_nip='$nim' ORDER BY id DESC LIMIT 5");
 	        return $sql;
 		}
 
@@ -26,4 +20,10 @@
 			$sql=$this->db->query("INSERT INTO `pengunjung`(`pasien_nim_nip`, `no_pengunjung`, `tanggal`, `antrian`, `jam`) SELECT '$nim',COUNT(antrian)+1,'$tanggal','$antrian','$jam'  FROM pengunjung WHERE tanggal='$tanggal'");
 	        return $sql;
 		}
-	}
+
+		function print($nim)
+		{
+			$sql=$this->db->query("SELECT * FROM `pengunjung` WHERE pasien_nim_nip='$nim' ORDER BY id DESC LIMIT 1");
+	        return $sql;
+		}
+	}		
