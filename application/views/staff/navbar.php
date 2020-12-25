@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>SIKUIN Staff Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="<?= base_url('assets'); ?>/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -82,6 +82,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
       <div class="sidebar-heading">
         Menu
       </div>
+
+      <!-- Nav Item - Pembayaran -->
+      <li class="nav-item">
+        <a class="nav-link" href="<?php echo site_url('Staf_pembayaran');?>">
+          <i class="fas fa-fw fa-cash-register"></i>
+          <span>Pembayaran</span></a>
+      </li>
 
       <!-- Nav Item - daftar -->
       <li class="nav-item">

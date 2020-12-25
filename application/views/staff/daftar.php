@@ -38,6 +38,8 @@
             <button type="submit" class="btn btn-primary">Daftar</button>
           </form>
 
+          <!--- tabel ---->
+          <div class="card shadow p-3 mb-5 mt-3 bg-white rounded">     
           <table class="table">
               <thead>
                 <tr>
@@ -45,6 +47,7 @@
                   <th scope="col">No Antrian</th>
                   <th scope="col">Kode</th>
                   <th scope="col">Tanggal</th>
+                  <th scope="col">Status Antrian</th>
                 </tr>
               </thead>
               <tbody>
@@ -59,16 +62,20 @@
 
                               $tanggal=$i['tanggal'];
 
+                              $status=$i['status'];
+
                   ?>
                 <tr>
                   <td><?php echo $NIM;?></td>
                   <td><?php echo $antrian;?></td>
                   <td><?php echo $kode;?></td>
                   <td><?php echo $tanggal;?></td>
+                  <td><?php echo $status;?></td>
                 </tr>
                 <?php endforeach;?>
               </tbody>
           </table>
+          </div>
         </div>
         <!-- /.container-fluid -->
       </div>

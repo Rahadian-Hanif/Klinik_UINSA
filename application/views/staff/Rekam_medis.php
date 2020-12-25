@@ -13,7 +13,8 @@
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
-          <table class="table">
+          <div class="card shadow p-3 mb-5 mt-3 bg-white rounded">
+            <table class="table">
               <thead>
                 <tr>
                   <th scope="col">No</th>
@@ -35,7 +36,7 @@
                               $riwayat=$i['riwayat'];
 
                   ?>
-                <tr>
+                <a href="">
                   <th scope="row"><?php echo $n++;?></th>
                   <td><?php echo $NIM;?></td>
                   <td><?php echo $Nama;?></td>
@@ -43,10 +44,13 @@
                   <td>
                     <a class="btn btn-success" href="<?php echo site_url('Staf_rekam_medis/view/'.$NIM);?>" role="button">View</a>
                   </td>
+                  
                 </tr>
                 <?php endforeach;?>
               </tbody>
-          </table>
+            </table>
+          </div>
+          
         </div>
         <!-- /.container-fluid -->
       </div>

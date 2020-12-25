@@ -11,13 +11,13 @@
 
 		function riwayat_antrian($nim)
 		{
-			$sql=$this->db->query("SELECT antrian,DATE_FORMAT(tanggal, '%d %M %Y') as tanggal FROM `pengunjung` WHERE pasien_nim_nip='$nim' ORDER BY id DESC LIMIT 5");
+			$sql=$this->db->query("SELECT antrian,status,DATE_FORMAT(tanggal, '%d %M %Y') as tanggal FROM `pengunjung` WHERE pasien_nim_nip='$nim' ORDER BY id DESC LIMIT 5");
 	        return $sql;
 		}
 
-		function daftar($nim,$tanggal,$antrian,$jam)
+		function daftar($nim,$tanggal,$antrian,$jam,$status)
 		{
-			$sql=$this->db->query("INSERT INTO `pengunjung`(`pasien_nim_nip`, `no_pengunjung`, `tanggal`, `antrian`, `jam`) SELECT '$nim',COUNT(antrian)+1,'$tanggal','$antrian','$jam'  FROM pengunjung WHERE tanggal='$tanggal'");
+			$sql=$this->db->query("INSERT INTO `pengunjung`(`pasien_nim_nip`, `no_pengunjung`, `tanggal`, `antrian`, `jam`,`status`) SELECT '$nim',COUNT(antrian)+1,'$tanggal','$antrian','$jam','$status'  FROM pengunjung WHERE tanggal='$tanggal'");
 	        return $sql;
 		}
 

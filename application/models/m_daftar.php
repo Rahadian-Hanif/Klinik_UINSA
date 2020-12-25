@@ -2,10 +2,10 @@
 	class m_daftar  extends CI_Model  {
 
 
-		function daftar($nim,$pegawai_id,$tanggal,$antrian,$jam)
+		function daftar($nim,$pegawai_id,$tanggal,$antrian,$jam,$status)
 		{
 			$sql=$this->db->query(
-				"INSERT INTO `pengunjung`(`pasien_nim_nip`, `pegawai_id`, `no_pengunjung`, `tanggal`, `antrian`, `jam`) SELECT '$nim','$pegawai_id',COUNT(antrian)+1,'$tanggal','$antrian','$jam'  FROM pengunjung WHERE tanggal='$tanggal'"
+				"INSERT INTO `pengunjung`(`pasien_nim_nip`, `pegawai_id`, `no_pengunjung`, `tanggal`, `antrian`, `jam`,`status`) SELECT '$nim','$pegawai_id',COUNT(antrian)+1,'$tanggal','$antrian','$jam','$status'  FROM pengunjung WHERE tanggal='$tanggal'"
 			);
 	        return $sql;
 		}
@@ -17,8 +17,8 @@
 		}
 
 		function validate($nim){
-		    $this->db->where('pasien_nim_nip',$nim);
-		    $result = $this->db->get('pengunjung',1);
+		    $this->db->where('nim_nip',$nim);
+		    $result = $this->db->get('pasien',1);
 		    return $result;
 		}
 	}

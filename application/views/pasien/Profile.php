@@ -65,7 +65,8 @@
                                 <tbody class="text-left">
 
                                     <td><?php echo $d->tanggal;?></td>
-                                    <td><?php echo $d->antrian;?></td>                                  
+                                    <td><?php echo $d->antrian;?></td>
+                                    <td><?php echo $d->status;?></td>                                  
                                 </tbody>
                                 <?php endforeach;?>
                             </table>

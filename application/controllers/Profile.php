@@ -27,7 +27,8 @@ class Profile extends CI_Controller {
     		$tanggal = $this->input->post('tanggal');
 	        $antrian = random_string('alnum',10);
 	        $jam     = date("H:i:s");
-			$this->m_pasien->daftar($nim,date("Y/m/d",strtotime($tanggal)),$antrian,$jam);
+	        $status  = "Menunggu";
+			$this->m_pasien->daftar($nim,date("Y/m/d",strtotime($tanggal)),$antrian,$jam,$status);
 			$this->session->set_flashdata('berhasil','berhasil');
 			redirect('Profile');
 		}else{

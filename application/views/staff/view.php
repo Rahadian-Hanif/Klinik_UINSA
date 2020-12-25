@@ -16,7 +16,8 @@
                     <i class="fas fa-fw fa-plus"></i>Tambah
                   </a>
                 </div>
-              </div>  
+              </div>
+              <div class="card shadow p-3 mb-5 mt-3 bg-white rounded">  
               <table class="table">
                   <thead>
                     <tr>
@@ -41,6 +42,7 @@
                   </tbody>
                   <?php endforeach;?>
               </table>
+              </div>
             </div>
             <div class="col">
               <div class="card shadow" style="width: 12rem;">
