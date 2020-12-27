@@ -14,17 +14,21 @@
               <thead>
                 <tr>
                   <th scope="col">NIM/NIP</th>
-                  <th scope="col">penanganan</th>
-                  <th scope="col">diagnosis</th>                  
+                  <th scope="col">Poli</th>
+                  <th scope="col">Penanganan</th>
+                  <th scope="col">Diagnosis</th>
+                  <th scope="col">Pembayaran</th>                  
                 </tr>
               </thead>
               <?php foreach($data as $d):?>
               <tbody>
                 <tr>
                   <th><?php echo $d->pasien_nim_nip;?></th>
+                  <td><?php echo $d->poli;?></td>
                   <td><?php echo $d->penanganan;?></td>
                   <td><?php echo $d->diagnosis;?></td>
-                  <td><a class="btn btn-primary" href="#" role="button">Bayar</a></td>
+                  <td>Rp. <?php echo $d->biaya;?></td>
+                  <td><a class="btn btn-primary" href="<?php echo site_url('Staf_pembayaran/bayar/'.$d->id);?>" role="button">Bayar</a></td>
                 </tr>
               </tbody>
               <?php endforeach;?>

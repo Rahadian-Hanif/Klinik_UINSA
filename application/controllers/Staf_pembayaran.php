@@ -18,4 +18,32 @@ class Staf_pembayaran extends CI_Controller {
         $this->load->view('staff/pembayaran',$data);
         $this->load->view('staff/footer');
     }
+
+     public function bayar($id)
+    {
+        $data['data']=$this->m_pembayaran->load_bayar($id)->result();
+        $this->load->view('staff/navbar');
+        $this->load->view('staff/form_bayar',$data);
+        $this->load->view('staff/footer');
+    }
+
+     public function update($id)
+    {
+
+        $biaya=$this->input->post('biaya',TRUE);
+        $data['data'];
+        if ($biaya != "Pilih...") {
+            if ($biaya=="15000") {
+                $poli="Poli Umum";
+                $data['data']=$this->m_pembayaran->update_bayar($id,$biaya,$poli);
+            } else {
+                $poli="Poli Gigi";
+                $data['data']=$this->m_pembayaran->update_bayar($id,$biaya,$poli);
+            }
+            redirect('Staf_pembayaran');
+        }else{
+            $this->session->set_flashdata('error_poli','Poli Belum Dipilih');
+            redirect('Staf_pembayaran/bayar/'.$id);
+        }
+    }
 }

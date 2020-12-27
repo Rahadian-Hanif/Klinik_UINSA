@@ -24,6 +24,7 @@
                       <th scope="col">Tanggal Periksa</th>
                       <th scope="col">Penanganan</th>
                       <th scope="col">Diagnosa</th>
+                      <th scope="col">Poli</th>
                       <th scope="col">Hapus</th>
                     </tr>
                   </thead>
@@ -35,6 +36,7 @@
                       <td><?php echo date('d/m/Y',strtotime($d->tanggal));?></td>
                       <td><?php echo $d->penanganan;?></td>
                       <td><?php echo $d->diagnosis;?></td>
+                      <td><?php echo $d->poli;?></td>
                       <td>
                         <a href="#Hapus" data-toggle="modal" data-target="#hapus<?php echo $d->id;?>"><i class="fas fa-fw fa-trash-alt"></i></a>
                       </td>
