@@ -18,6 +18,8 @@
   <!-- Custom styles for this template-->
   <link href="<?= base_url('assets'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <link href="<?= base_url('assets'); ?>/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
 
  <!-- jQuery -->
@@ -61,7 +63,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="">
         <p>
-          <img src="<?= base_url('assets'); ?>/img/logo_sikuin.png" width="180" height="50">
+          <img src="<?= base_url('assets'); ?>/img/logo_sikuin.png" width="180" height="50" class="img-fluid">
         </p> 
       </a>
 
@@ -82,38 +84,42 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
       <div class="sidebar-heading">
         Menu
       </div>
-
-      <!-- Nav Item - Pembayaran -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_pembayaran');?>">
-          <i class="fas fa-fw fa-cash-register"></i>
-          <span>Pembayaran</span></a>
-      </li>
+      <?php if ($this->session->userdata('status')!=='dokter') { ?>
+       <!-- Nav Item - Pembayaran -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Staf_pembayaran');?>">
+              <i class="fas fa-fw fa-cash-register"></i>
+              <span>Pembayaran</span></a>
+          </li>
 
       <!-- Nav Item - daftar -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_daftar');?>">
-          <i class="fas fa-fw fa-clipboard"></i>
-          <span>Daftar</span></a>
-      </li>
-      <!-- Nav Item - Kunjungan -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_laporan');?>">
-          <i class="fas fa-fw fa-chart-bar"></i>
-          <span>Laporan</span></a>
-      </li>
-      <!-- Nav Item - Rekamedis -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('Staf_rekam_medis');?>">
-          <i class="fas fa-fw fa-notes-medical"></i>
-          <span>Rekam Medis</span></a>
-      </li>
-      <!-- Nav Item - Pesan -->
-      <li class="nav-item">
-        <a class="nav-link" href="<?php echo site_url('staf_chat');?>">
-          <i class="fas fa-fw fa-comment-dots"></i>
-          <span>Chat</span></a>
-      </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Staf_daftar');?>">
+              <i class="fas fa-fw fa-clipboard"></i>
+              <span>Daftar</span></a>
+          </li>
+          <!-- Nav Item - Kunjungan -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Staf_laporan');?>">
+              <i class="fas fa-fw fa-chart-bar"></i>
+              <span>Laporan</span></a>
+          </li>
+      <?php } else {?>
+        <!-- Nav Item - Rekamedis -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('Staf_rekam_medis');?>">
+              <i class="fas fa-fw fa-notes-medical"></i>
+              <span>Rekam Medis</span></a>
+          </li>
+          <!-- Nav Item - Pesan -->
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo site_url('staf_chat');?>">
+              <i class="fas fa-fw fa-comment-dots"></i>
+              <span>Chat</span></a>
+          </li>
+
+      <?php } ?>
+
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
 
@@ -162,21 +168,15 @@ src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootst
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $this->session->userdata('nama'); ?></span>
-                <i class="fas fa-fw fa-user-circle"></i>
+                <!-- <i class="fas fa-fw fa-user-circle"></i> -->
+
+                <img class="img-profile rounded-circle" src="<?= base_url('assets'); ?>/img/doctor_vector.png">
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">

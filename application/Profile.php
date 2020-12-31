@@ -6,14 +6,12 @@ class Profile extends CI_Controller {
 	function __construct(){
         parent::__construct();
         $this->load->model('m_pasien');
-        $this->load->model('m_chat');
     }
 
 	public function index()
 	{
 		$nim =	$this->session->userdata('nim_nip');
 		$data['data']=	$this->m_pasien->riwayat_antrian($nim)->result();
-		$data['data2']=	$this->m_chat->load_data();
 		$this->load->view('pasien/nav_profile');
         $this->load->view('pasien/profile',$data);
         $this->load->view('pasien/footer_profile');

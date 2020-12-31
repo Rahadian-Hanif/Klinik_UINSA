@@ -6,6 +6,7 @@ function __construct(){
         parent::__construct();
         $this->load->database();
         $this->load->model('m_chat');
+        date_default_timezone_set("Asia/Jakarta");
     }
 
 	

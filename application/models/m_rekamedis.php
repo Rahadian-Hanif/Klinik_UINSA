@@ -1,10 +1,16 @@
 <?php
-	class m_rekamedis  extends CI_Model  {
+	class M_rekamedis  extends CI_Model  {
 
 
 		function load_data()
 		{
 			$sql=$this->db->query("SELECT * FROM pasien");
+	        return $sql;
+		}
+
+		function search($nama)
+		{
+			$sql=$this->db->query("SELECT * FROM `pasien` WHERE `nama` LIKE '$nama%'");
 	        return $sql;
 		}
 

@@ -1,5 +1,5 @@
 <?php
-	class m_staff  extends CI_Model  {
+	class M_staff  extends CI_Model  {
 
 
 		function validate($username,$password){

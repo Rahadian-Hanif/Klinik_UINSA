@@ -1,5 +1,5 @@
 <?php
-	class m_pasien  extends CI_Model  {
+	class M_pasien  extends CI_Model  {
 
 
 		function validate($nim,$password){

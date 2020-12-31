@@ -1,5 +1,5 @@
 <?php
-	class m_pembayaran  extends CI_Model  {
+	class M_pembayaran  extends CI_Model  {
 
 		function pasien($tanggal)
 		{

@@ -34,7 +34,7 @@
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-6 d-none d-lg-block  mt-5">
-                <img src="<?= base_url('assets'); ?>/images/about.jpg" width="500" height="300">
+                <img src="<?= base_url('assets'); ?>/images/about.jpg" width="500" height="300" >
               </div>
               <div class="col-lg-6">
                 <div class="p-5">
@@ -53,10 +53,6 @@
                       <input name="password" type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                     </div>
                     <div class="form-group">
-                      <div class="custom-control custom-checkbox small">
-                        <input type="checkbox" class="custom-control-input" id="customCheck">
-                        <label class="custom-control-label" for="customCheck">Remember Me</label>
-                      </div>
                     </div>
                     <button class="btn btn-success btn-user btn-block" type="submit">Login</button>
                     <hr>

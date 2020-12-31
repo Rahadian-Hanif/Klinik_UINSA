@@ -9,7 +9,7 @@
               
               <div class="row">
                 <div class="col-9">
-                  <a class="btn btn-light" href="<?php echo site_url('Staf_rekam_medis');?>" role="button">Back</a>
+                  <a class="btn btn-secondary" href="<?php echo site_url('Staf_rekam_medis');?>" role="button">Back</a>
                 </div>
                 <div class="col">
                   <a class="btn btn-info rounded" href="#tambah" data-toggle="modal" data-target="#tambah">
@@ -45,6 +45,7 @@
                   <?php endforeach;?>
               </table>
               </div>
+
             </div>
             <div class="col">
               <div class="card shadow" style="width: 12rem;">

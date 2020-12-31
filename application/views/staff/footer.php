@@ -24,12 +24,12 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Ingin Meninggalkan Halaman ?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-body">Klik logout untuk meninggalkan halaman</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-primary" href="<?php echo site_url('staff/logout');?>">Logout</a>
@@ -49,12 +49,65 @@
   <script src="<?= base_url('assets'); ?>/js/sb-admin-2.min.js"></script>
 
   <!-- Page level plugins -->
-  <script src="<?= base_url('assets'); ?>/vendor/chart.js/Chart.min.js"></script>
 
-  <!-- Page level custom scripts -->
-  <script src="<?= base_url('assets'); ?>/js/demo/chart-area-demo.js"></script>
-  <script src="<?= base_url('assets'); ?>/js/demo/chart-pie-demo.js"></script>
+  <script src="<?= base_url('assets'); ?>/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="<?= base_url('assets'); ?>/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+        laporan();   //pemanggilan fungsi
+        $('table.display').dataTable();
+          
+        //fungsi tampil barang
+        function laporan(){
+            $.ajax({
+                type  : 'ajax',
+                url   : '<?php echo base_url()?>Staf_laporan/list',
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    var html = '';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html += '<tr>'+
+                                '<td>'+data[i].tanggal+'</td>'+
+                                '<td>'+data[i].pasien_nim_nip+'</td>'+
+                                '<td>'+data[i].poli+'</td>'+
+                                '<td>'+data[i].biaya+'</td>'+
+                                '</tr>';
+                    }
+                    $('#show_data').html(html);
+                }
+ 
+            });
+
+            $.ajax({
+                type  : 'ajax',
+                url   : '<?php echo base_url()?>Staf_rekam_medis/list',
+                async : false,
+                dataType : 'json',
+                success : function(data){
+                    var html = '';
+                    var i;
+                    for(i=0; i<data.length; i++){
+                        html += '<tr>'+
+                                '<td>'+data[i].nim_nip+'</td>'+
+                                '<td>'+data[i].nama+'</td>'+
+                                '<td>'+data[i].riwayat+'</td>'+
+                                '<td><a class="btn btn-success" href="<?php echo site_url()?>Staf_rekam_medis/view/'+data[i].nim_nip+'" role="button">View</a></td>'+
+                                '</tr>';
+                    }
+                    $('#rekam_medis').html(html);
+                }
+ 
+            });
+
+        }
+ 
+    });
+ 
+</script>
 </body>
 
 </html>

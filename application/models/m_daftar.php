@@ -1,5 +1,5 @@
 <?php
-	class m_daftar  extends CI_Model  {
+	class M_daftar  extends CI_Model  {
 
 
 		function daftar($nim,$pegawai_id,$tanggal,$antrian,$jam,$status)

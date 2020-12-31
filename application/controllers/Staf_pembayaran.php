@@ -35,10 +35,12 @@ class Staf_pembayaran extends CI_Controller {
         if ($biaya != "Pilih...") {
             if ($biaya=="15000") {
                 $poli="Poli Umum";
-                $data['data']=$this->m_pembayaran->update_bayar($id,$biaya,$poli);
+                $int=(int)$biaya;
+                $data['data']=$this->m_pembayaran->update_bayar($id,$int,$poli);
             } else {
                 $poli="Poli Gigi";
-                $data['data']=$this->m_pembayaran->update_bayar($id,$biaya,$poli);
+                $int=(int)$biaya;
+                $data['data']=$this->m_pembayaran->update_bayar($id,$int,$poli);
             }
             redirect('Staf_pembayaran');
         }else{

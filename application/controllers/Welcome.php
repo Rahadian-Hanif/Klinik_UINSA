@@ -24,20 +24,20 @@ class Welcome extends CI_Controller {
             $nama       = $data['nama'];
             $alamat     = $data['alamat'];
             $nim  	 	= $data['nim_nip'];
-            $alergi     = $data['alergi'];
+            $riwayat     = $data['riwayat'];
             $tgl_lahir  = $data['tgl_lahir'];
             $sesdata    = array(
                 'nama'                  => $nama,
                 'alamat'                => $alamat,
                 'nim_nip'              	=> $nim,
-                'alergi'                => $alergi,
+                'riwayat'                => $riwayat,
                 'tgl_lahir'             => $tgl_lahir,
                 'logged_in'             => TRUE
             );
             $this->session->set_userdata($sesdata);
             redirect('Profile');          
             }else{
-                echo $this->session->set_flashdata('pesan','Nim dan/atau password salah');
+                echo $this->session->set_flashdata('pesan','NIM Atau Password Salah');
                 // kosong
                 redirect('Welcome');             
              }
