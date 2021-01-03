@@ -1,60 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Klinik UINSA</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!--      <meta http-equiv="refresh" content="10" /> -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/animate.css">
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/magnific-popup.css">
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/aos.css">
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/ionicons.min.css">
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/bootstrap-datepicker.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/jquery.timepicker.css">
-
-
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/flaticon.css">
-    <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/icomoon.css">
-  <link rel="stylesheet" href="<?= base_url('assets'); ?>/css/style.css">
-
+<script src="https://use.typekit.net/hoy3lrg.js"></script>
 <script>try{Typekit.load({ async: true });}catch(e){}</script>
-
-<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
-
-
-  <style class="cp-pen-styles">
-  body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background: #E6EAEA;
-  font-family: "proxima-nova", "Source Sans Pro", sans-serif;
-  font-size: 1em;
-  letter-spacing: 0.1px;
-  color: #32465a;
-  text-rendering: optimizeLegibility;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
-  -webkit-font-smoothing: antialiased;
-}
+<link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'><link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+<style class="cp-pen-styles">
 
 #frame {
   width: 100%;
-  height: 87vh;
-  margin-top: 80px;
+  min-width: 360px;
+  max-width: 2000px;
+  height: 90vh;
+  margin-top: -30px;
   min-height: 300px;
   max-height: 720px;
   background: #E6EAEA;
+  
 }
 @media screen and (max-width: 360px) {
   #frame {
@@ -68,7 +26,7 @@
   max-width: 340px;
   width: 40%;
   height: 100%;
-  background: #2c3e50;
+  background: #3b5278;
   color: #f5f5f5;
   overflow: hidden;
   position: relative;
@@ -339,7 +297,7 @@
   padding: 10px 0 10px 46px;
   width: calc(100% - 25px);
   border: none;
-  background: #32465a;
+  background: #25344d;
   color: #f5f5f5;
 }
 #frame #sidepanel #search input:focus {
@@ -378,7 +336,7 @@
 }
 #frame #sidepanel #contacts::-webkit-scrollbar {
   width: 8px;
-  background: #2c3e50;
+  background: #2b5394;
 }
 #frame #sidepanel #contacts::-webkit-scrollbar-thumb {
   background-color: #243140;
@@ -421,7 +379,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 2px solid #2c3e50;
+  border: 2px solid #2b5394;
   background: #95a5a6;
 }
 #frame #sidepanel #contacts ul li.contact .wrap span.online {
@@ -503,12 +461,12 @@
   outline: none;
 }
 #frame #sidepanel #bottom-bar button:nth-child(1) {
-  border-right: 1px solid #2c3e50;
+  border-right: 1px solid #2b5394;
 }
 @media screen and (max-width: 735px) {
   #frame #sidepanel #bottom-bar button:nth-child(1) {
     border-right: none;
-    border-bottom: 1px solid #2c3e50;
+    border-bottom: 1px solid #2b5394;
   }
 }
 #frame #sidepanel #bottom-bar button:hover {
@@ -701,91 +659,93 @@
 #frame .content .message-input .wrap button:focus {
   outline: none;
 }
-</style>
-  
-</head>
+</style></head><body>
+<!-- 
 
-<body>
+A concept for a chat interface. 
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top ">
-            <a class="navbar-brand pb-2" href="<?php echo site_url('Profile');?>">
-                <img src="<?= base_url('assets'); ?>/img/logo_sikuin.png" width="180" height="50"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-                aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="icon-person"></span>
-            </button>
+Try writing a new message! :)
 
-            <div class="collapse navbar-collapse" id="ftco-nav">
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item"><a href="<?php echo site_url('Profile');?>" class="nav-link"> <span class="icon-person"></span> Profil</a></li>
-                      <li class="nav-item"><a href="<?php echo site_url('Welcome/logout');?>" class="nav-link"><span class="ion-ios-log-out"></span> Keluar</a></li>
-                      <li class="nav-item cta"><a href="" class="btn btn-outline-primary ml-1" data-toggle="modal" data-target="#modalRequest"><span>Ambil Nomer Antrian</span></a></li>
-                    </ul>
-                  </div>
-    </nav> 
- <!-- table data chat pasien -->
- <div id="frame">
-  <?php foreach($data as $d): ?>
+
+Follow me here:
+Twitter: https://twitter.com/thatguyemil
+Codepen: https://codepen.io/emilcarlsson/
+Website: http://emilcarlsson.se/
+
+-->
+
+<div id="frame">
   <div id="sidepanel">
+
     <div id="profile">
-      <div class="wrap font-weight-bold">
-        <img id="profile-img" src="http://emilcarlsson.se/assets/mikeross.png" class="online" alt="" />
-        <p><?php echo $d->nama;?></p>
+      <div class="wrap">
+        <img id="profile-img" src="<?= base_url('assets'); ?>/img/doctor_vector.png" class="online" alt="" />
+        <p><?php echo $this->session->userdata('nama'); ?></p>
+        <i class="fa fa-chevron-down expand-button" aria-hidden="true"></i>
+        <div id="expanded">
+          <input name="poli" type="text" value="Poli Gigi" />
+          <input name="deskripsi" type="text" value="Lulusan dari Universitas Indonesia" />
+          <input name="kerja" type="text" value="Senin - Jumat | 07:00 - 16:00" />
+        </div>
       </div>
     </div>
-    <div style="padding-top: 5px;padding-left: 30px;">
-        <p ><?php echo $d->posisi;?></p>
-        <h6><?php echo $d->nama;?> adalah seorang Dokter Umum yang berpraktik di Rumah sakit Sutomo Surabaya. Beliau merupakan alumni Universitas Indonesia</h6>
-        <h5 class="font-weight-bold text-light">Jam Kerja</h5>
-        <p>Senin - Jumat | 08:00 - 17:00</p>
+
+    <div id="search">
+      <label for=""><i class="fa fa-search" aria-hidden="true"></i></label>
+      <input type="text" placeholder="Search contacts..." />
     </div>
-  </div>
-  <?php endforeach;?>
-
-  <div class="content">
-    <div class="messages">
+    <div id="contacts">
       <ul>
-        <?php 
-        $lastID = 0;
-        foreach($isi as $d): ?>
-         <?php
-         $lastID = $d->id; 
-         if($d->pengirim == $this->session->userdata('nama')){?>
-          <li class="sent">
-          <img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
-          <p><?php echo $d->cht;?></p>
-          </li>
-        <?php } else {?>
-          <li class="replies">
-          <img src="http://emilcarlsson.se/assets/harveyspecter.png" alt="" />
-          <p><?php echo $d->cht;?></p>
-          </li>
-        <?php }?>
+
+        <?php foreach($data as $d): ?>
+ 
+          <li class="contact" onclick="window.location='<?php echo site_url('Staf_chat/room_chat/'.$d->pasien_nip_nim);?>';">
+          <div class="wrap">
+            <img src="<?= base_url('assets'); ?>/img/user_vector.png" alt="" />
+            <div class="meta">
+              <p class="name"><?php echo $d->nama;?></p>
+              <p class="preview"><?php echo $d->pasien_nip_nim;?></p>
+            </div>
+          </div>
+        </li>
+
+        
         <?php endforeach;?>
-
-
+        
       </ul>
     </div>
+  </div>
 
+  <div class="content">
 
-    
+      <?php 
+      $isi=null;
+      $this->load->view($content,$isi);
+       ?>
+
     <div class="message-input">
       <div class="wrap">
-      <form id="formChat" action="<?php echo base_url().'Chat/kirim'; ?>" method="post">
-      <input id="cht" type="text" placeholder="Tulis pesan Anda..." name="cht" autocomplete="off">
-      <i class="fa fa-paperclip fa-2x attachment " aria-hidden="true"></i>
-      <button class="submit"><i class="fa fa-paper-plane " aria-hidden="true"></i></button>
+      <form action="<?php echo base_url().'Staf_chat/kirim'; ?>" method="post">
+      <input type="text" placeholder="Tulis pesan Anda..." name="cht" autocomplete="off">
+      <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
+      <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
       </form>
       </div>
     </div>
-    
 
   </div>
-
 
 </div>
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
 <script >$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+
+
+$(".expand-button").click(function() {
+  $("#profile").toggleClass("expanded");
+  $("#contacts").toggleClass("expanded");
+});
+
+
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
@@ -793,81 +753,50 @@ $(window).on('keydown', function(e) {
     return false;
   }
 });
-
-
-
-$("#formChat").submit(function(e){
-  e.preventDefault(); // ==> untuk men 'take over' handle pada form supaya tidak pindah page saat post data
-  sendMessage(this);
-});
-
-function sendMessage(form){
-  if($("#cht").val() == ""){
-    return false;
-  }
-  var formData = new FormData($(form)[0]); // untuk menserialize post data saat submit
-
-  $.ajax({ /* fungsi ajax digunakan untuk memproses submit tanpa harus pindah halaman (client side) */
-    method: "POST",
-    url: "<?php echo base_url(); ?>Chat/kirim", /* halaman untuk memproses pengiriman chat */
-    dataType: "json",  /*return data berupa json, lihat di controller */
-    data: formData,
-    processData: false,
-    contentType: false,
-    success: function( result ) {
-      $("#cht").val("");
-      $("#cht").focus();
-    },
-    error: function( result ) {
-      alert(JSON.stringify(result) );
-    },
-    complete: function() {
-      /*alert("Selesai");*/
-    }
-  });
-}
-
-
-var lastID = "<?= $lastID; ?>";
-$(document).ready(function(e){
-  //alert(lastID);
-  setTimeout(function(){
-    refreshChat();
-  }, 1000);
-});
-
-function refreshChat(){
-  var url = "<?php echo base_url(); ?>Chat/getChat/<?= $pegawai_id; ?>/" + lastID + "/1";
-  
-  $.ajax({
-    method: "POST",
-    url: url,
-    dataType: "json",
-    processData: false,
-    contentType: false,
-    success: function( result ) {
-      if(result.length >0){
-        $.each(result, function(index, array){
-          lastID = array["id"];
-          var item  = '<li class="'+array["class"]+'">';
-              item += '<img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />';
-              item += '<p>'+ array["cht"] +'</p>';
-              item += '</li>';
-
-          $(".messages > ul").append(item);
-        });
-        scrollChatToBottom();
-      }
-    },
-    error: function( result ) {
-      alert(JSON.stringify(result) );
-    },
-    complete: function() {
-      setTimeout(function(){
-        refreshChat("<?= $lastID; ?>");
-      }, 1000);
-    }
-  });
-}
-
+//# sourceURL=pen.js
 </script>
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ingin Meninggalkan Halaman ?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Klik logout untuk meninggalkan halaman</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="<?php echo site_url('staff/logout');?>">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="<?= base_url('assets'); ?>/vendor/jquery/jquery.min.js"></script>
+  <script src="<?= base_url('assets'); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="<?= base_url('assets'); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="<?= base_url('assets'); ?>/js/sb-admin-2.min.js"></script>
+
+
+</body>
+
+</html>

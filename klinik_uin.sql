@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Des 2020 pada 06.49
+-- Waktu pembuatan: 03 Jan 2021 pada 00.24
 -- Versi server: 10.1.38-MariaDB
 -- Versi PHP: 7.3.2
 
@@ -42,15 +42,12 @@ CREATE TABLE `chat` (
 --
 
 INSERT INTO `chat` (`id`, `pasien_nip_nim`, `cht`, `pengirim`, `waktu`, `pegawai_id`) VALUES
-(2, 'H96218058', 'tes', 'Hanif Aristyo R', '2020-12-20 04:37:55', 1),
-(3, 'H96218059', 'tes', 'BUDI Doremi', '2020-12-20 05:03:35', 1),
-(4, 'H96218059', 'tes2', 'BUDI Doremi', '2020-12-20 05:04:20', 1),
-(5, 'H96218058', 'saya siapa', 'Hanif Aristyo R', '2020-12-20 05:26:10', 1),
-(6, 'H96218058', 'lah mana saya tau', 'dr Hernandes\r\n', '2020-12-20 11:27:47', 1),
-(7, 'H96218058', 'lah kok ngamok', 'Hanif Aristyo R', '2020-12-20 06:49:49', 1),
-(9, 'H96218059', 'tes3', 'BUDI Doremi', '2020-12-20 10:54:07', 1),
-(10, 'H96218058', 'qqq', 'Hanif Aristyo R', '2020-12-20 10:55:36', 1),
-(11, 'H96218058', 'arista', 'Hanif Aristyo R', '2020-12-20 15:39:25', 1);
+(23, 'H96218058', 'P', 'Hanif Aristyo R', '2020-12-28 07:14:14', 1),
+(24, 'H96218060', 'p', 'Dendy Suryadi', '2020-12-31 06:12:37', 1),
+(25, 'H96218060', 'pak saya mau tanya', 'Dendy Suryadi', '2020-12-31 06:12:51', 1),
+(28, 'H96218060', 'Passwordnya ???', 'dr Hernandes', '2020-12-31 13:25:56', 1),
+(29, 'H96218058', 'Sesuai aplikasi ya pak', 'Hanif Aristyo R', '2020-12-31 14:18:39', 1),
+(30, 'H96218058', 'ha?', 'dr Hernandes', '2021-01-01 19:49:01', 1);
 
 -- --------------------------------------------------------
 
@@ -72,7 +69,7 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`nim_nip`, `nama`, `password`, `alamat`, `tgl_lahir`, `riwayat`) VALUES
-('H96218058', 'Hanif Aristyo R', '81dc9bdb52d04dc20036dbd8313ed055', 'Citraland', '2000-08-02', NULL),
+('H96218058', 'Hanif Aristyo R', '81dc9bdb52d04dc20036dbd8313ed055', 'Citraland', '2000-08-02', 'Insomnia'),
 ('H96218059', 'BUDI Doremi', '81dc9bdb52d04dc20036dbd8313ed055', 'Citraland', '2000-05-02', 'Alergi kacang dan udang'),
 ('H96218060', 'Dendy Suryadi', '81dc9bdb52d04dc20036dbd8313ed055', 'Bukitmas', '1999-04-02', NULL);
 
@@ -97,7 +94,9 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id`, `nama`, `alamat`, `username`, `password`, `status`, `posisi`) VALUES
-(1, 'dr Hernandes', 'Wiyung no 9', 'Hernandes', 'e10adc3949ba59abbe56e057f20f883e', 'dokter', 'Poli Gigi');
+(1, 'dr Hernandes', 'Wiyung no 9', 'Hernandes', 'e10adc3949ba59abbe56e057f20f883e', 'dokter', 'Poli Gigi'),
+(2, 'dr Robby Saputra', 'Semolo waru', 'Robbysp', 'e10adc3949ba59abbe56e057f20f883e', 'dokter', 'Poli Umum'),
+(3, 'Deny Yulianto', 'Jl Kendangsari No. 74', 'Deny', 'e10adc3949ba59abbe56e057f20f883e', 'saff', 'Admin');
 
 -- --------------------------------------------------------
 
@@ -124,7 +123,16 @@ INSERT INTO `pengunjung` (`id`, `pasien_nim_nip`, `pegawai_id`, `no_pengunjung`,
 (49, 'H96218060', 1, 1, '2020-12-25', 'HKTS7RgFe8', '09:45:19', 'selesai'),
 (51, 'H96218060', 1, 2, '2020-12-25', 'gVYQh4aOHm', '20:19:53', 'selesai'),
 (52, 'H96218059', 1, 3, '2020-12-25', '2xfF38BJSZ', '20:20:21', 'selesai'),
-(53, 'H96218058', 1, 4, '2020-12-25', 'Img8nkCYD0', '20:20:29', 'selesai');
+(53, 'H96218058', 1, 4, '2020-12-25', 'Img8nkCYD0', '20:20:29', 'selesai'),
+(54, 'H96218058', 1, 1, '2020-12-27', 'Ms3rGChlLY', '19:56:14', 'selesai'),
+(55, 'H96218059', 1, 2, '2020-12-27', 'kLv5f0wV8p', '19:58:30', 'selesai'),
+(56, 'H96218059', 1, 3, '2020-12-27', 'JbRec5qEIk', '19:58:37', 'Menunggu'),
+(57, 'H96218060', 1, 4, '2020-12-27', 'ZovmJtD0UQ', '19:58:44', 'Menunggu'),
+(58, 'H96218058', NULL, 5, '2020-12-27', 'JF3Ro9a0pK', '20:05:08', 'Menunggu'),
+(59, 'H96218058', 1, 1, '2020-12-28', 'yCqiGR9TzF', '09:15:34', 'selesai'),
+(60, 'H96218059', 1, 2, '2020-12-28', 'PA94wj2vyk', '09:15:45', 'selesai'),
+(61, 'H96218058', NULL, 3, '2020-12-28', 'ZLHGmswfOX', '09:47:44', 'selesai'),
+(62, 'H96218058', NULL, 4, '2020-12-28', 'GCgOeaLRFP', '13:17:37', 'selesai');
 
 -- --------------------------------------------------------
 
@@ -139,7 +147,7 @@ CREATE TABLE `rekamedis` (
   `tanggal` date NOT NULL,
   `diagnosis` text NOT NULL,
   `poli` varchar(25) NOT NULL,
-  `biaya` varchar(25) DEFAULT NULL
+  `biaya` int(25) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -147,13 +155,15 @@ CREATE TABLE `rekamedis` (
 --
 
 INSERT INTO `rekamedis` (`pasien_nim_nip`, `id`, `penanganan`, `tanggal`, `diagnosis`, `poli`, `biaya`) VALUES
-('H96218058', 1, 'diberi obat sakit kepala dan anti nyeri', '2020-11-27', 'Trauma ringan', 'Poli Umum', ''),
-('H96218060', 18, 'Cabut gigi', '2020-12-24', 'Gigi sakit dan ngilu', 'Poli Gigi', ''),
-('H96218060', 19, 'periksa gigi dan pembersihan karang gigi', '2020-12-25', 'karang gigi', 'Poli Gigi', '200000'),
-('H96218058', 20, 'er', '2020-12-25', 'wer', '', '15000'),
-('H96218058', 21, 'sdffsd', '2020-12-25', 'sdfsfd', '', '15000'),
-('H96218059', 22, 'vcb', '2020-12-27', 'vcb', 'Poli Gigi', '20000'),
-('H96218059', 23, 'hg', '2020-12-27', 'fh', 'Poli Umum', '15000');
+('H96218058', 1, 'diberi obat sakit kepala dan anti nyeri', '2020-11-27', 'Trauma ringan', 'Poli Umum', 15000),
+('H96218060', 18, 'Cabut gigi', '2020-12-24', 'Gigi sakit dan ngilu', 'Poli Gigi', 20000),
+('H96218060', 19, 'periksa gigi dan pembersihan karang gigi', '2020-12-25', 'karang gigi', 'Poli Gigi', 20000),
+('H96218058', 20, 'er', '2020-12-25', 'wer', 'Poli Umum', 15000),
+('H96218058', 21, 'sdffsd', '2020-12-25', 'sdfsfd', 'Poli Umum', 15000),
+('H96218059', 22, 'vcb', '2020-12-27', 'vcb', 'Poli Gigi', 20000),
+('H96218059', 23, 'hg', '2020-12-27', 'fh', 'Poli Umum', 15000),
+('H96218058', 24, 'werwer', '2020-12-27', 'werewr', 'Poli Gigi', 20000),
+('H96218060', 25, 'sakit kepala', '2020-12-28', 'trauma\r\n', 'Poli Gigi', 20000);
 
 --
 -- Indexes for dumped tables
@@ -203,25 +213,25 @@ ALTER TABLE `rekamedis`
 -- AUTO_INCREMENT untuk tabel `chat`
 --
 ALTER TABLE `chat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT untuk tabel `pegawai`
 --
 ALTER TABLE `pegawai`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pengunjung`
 --
 ALTER TABLE `pengunjung`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT untuk tabel `rekamedis`
 --
 ALTER TABLE `rekamedis`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

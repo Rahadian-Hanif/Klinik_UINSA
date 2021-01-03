@@ -44,7 +44,7 @@ class Profile extends CI_Controller {
 
 	public function print()
 	{
-		$this->load->library('dompdf_gen');
+		$this->load->library('Dompdf_gen');
 		$nim = $this->session->userdata('nim_nip');
 		$data['data']=$this->m_pasien->print($nim)->result();
 

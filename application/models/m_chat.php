@@ -18,8 +18,8 @@
 		    return $sql;
 		}
 
-		function load_chat($nim,$id_dokter){
-		    $sql=$this->db->query("SELECT pasien.nama,pegawai.nama,cht,waktu,pengirim FROM `chat`,pasien,pegawai WHERE pasien.nim_nip=pasien_nip_nim AND pegawai.id=pegawai_id AND pasien_nip_nim='$nim' AND pegawai_id='$id_dokter'");
+		function load_chat($nim,$id_dokter, $lastID = -1){
+		    $sql=$this->db->query("SELECT chat.id, pasien.nama,pegawai.nama,cht,waktu,pengirim FROM `chat`,pasien,pegawai WHERE pasien.nim_nip=pasien_nip_nim AND pegawai.id=pegawai_id AND pasien_nip_nim='$nim' AND pegawai_id='$id_dokter' and chat.id > '".$lastID."'");
 		    return $sql;
 		}
 

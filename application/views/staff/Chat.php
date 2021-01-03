@@ -725,8 +725,8 @@ Website: http://emilcarlsson.se/
 
     <div class="message-input">
       <div class="wrap">
-      <form action="<?php echo base_url().'Staf_chat/kirim'; ?>" method="post">
-      <input type="text" placeholder="Tulis pesan Anda..." name="cht" autocomplete="off">
+      <form id="formChat" action="<?php echo base_url().'Staf_chat/kirim'; ?>" method="post">
+      <input type="text" placeholder="Tulis pesan Anda..." id="cht" name="cht" autocomplete="off">
       <i class="fa fa-paperclip attachment" aria-hidden="true"></i>
       <button class="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
       </form>
@@ -737,7 +737,12 @@ Website: http://emilcarlsson.se/
 
 </div>
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script >$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+<script >
+
+scrollChatToBottom();
+function scrollChatToBottom(){
+  $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight")}, 500);
+}
 
 
 $(".expand-button").click(function() {
@@ -745,11 +750,42 @@ $(".expand-button").click(function() {
   $("#contacts").toggleClass("expanded");
 });
 
+$("#formChat").submit(function(e){
+  e.preventDefault(); // ==> untuk men 'take over' handle pada form supaya tidak pindah page saat post data
+  sendMessage(this);
+});
+
+function sendMessage(form){
+  if($("#cht").val() == ""){
+    return false;
+  }
+  var formData = new FormData($(form)[0]); // untuk menserialize post data saat submit
+
+  $.ajax({ /* fungsi ajax digunakan untuk memproses submit tanpa harus pindah halaman (client side) */
+    method: "POST",
+    url: "<?php echo base_url(); ?>Staf_chat/kirim", /* halaman untuk memproses pengiriman chat */
+    dataType: "json",  /*return data berupa json, lihat di controller */
+    data: formData,
+    processData: false,
+    contentType: false,
+    success: function( result ) {
+      $("#cht").val("");
+      $("#cht").focus();
+    },
+    error: function( result ) {
+      alert(JSON.stringify(result) );
+    },
+    complete: function() {
+      /*alert("Selesai");*/
+    }
+  });
+}
+
 
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {
-    newMessage();
+    sendMessage("#formChat");
     return false;
   }
 });
