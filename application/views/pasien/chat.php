@@ -735,7 +735,7 @@
     </div>
     <div style="padding-top: 5px;padding-left: 30px;">
         <p ><?php echo $d->posisi;?></p>
-        <h6><?php echo $d->nama;?> adalah seorang Dokter Umum yang berpraktik di Rumah sakit Sutomo Surabaya. Beliau merupakan alumni Universitas Indonesia</h6>
+        <h6><?php echo $d->nama;?> adalah seorang Dokter yang berpraktik di Rumah sakit Sutomo Surabaya. Beliau merupakan alumni Universitas Indonesia</h6>
         <h5 class="font-weight-bold text-light">Jam Kerja</h5>
         <p>Senin - Jumat | 08:00 - 17:00</p>
     </div>
@@ -785,7 +785,12 @@
 
 </div>
 <script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
-<script >$(".messages").animate({ scrollTop: $(document).height() }, "fast");
+<script >
+  // $(".messages").animate({ scrollTop: $(document).height() }, "fast");
+scrollChatToBottom();
+function scrollChatToBottom(){
+  $(".messages").animate({ scrollTop: $('.messages').prop("scrollHeight")}, 500);
+}
 
 $(window).on('keydown', function(e) {
   if (e.which == 13) {

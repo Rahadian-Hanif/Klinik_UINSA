@@ -5,7 +5,7 @@
           <nav aria-label="breadcrumb" class="main-breadcrumb">
           <?php if ($this->session->has_userdata('berhasil')) { ?>
                         <div class="alert alert-success" role="alert">
-                          Pendaftaran berhasil klik <a href="<?php echo site_url('Profile/print');?>" class="alert-link" target="_blank">Disinik</a> untuk cetak struk
+                          Pendaftaran berhasil klik <a href="<?php echo site_url('Profile/print');?>" class="alert-link" target="_blank">Disini</a> untuk cetak struk
                         </div>
 
                     <?php } else if ($this->session->has_userdata('error')){?>

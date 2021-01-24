@@ -96,9 +96,9 @@
             <div class="card-header py-3">
                            <div class="row">
                 <div class="col-sm">
-                  <button type="button" class="btn btn-info btn-sm">Excle
+<!--                   <button type="button" class="btn btn-info btn-sm">Excle
                     <i class="fas fa-fw fa-download"></i>
-                  </button>
+                  </button> -->
                 </div>
               </div>
             </div>
